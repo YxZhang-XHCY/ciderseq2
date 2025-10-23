@@ -159,7 +159,7 @@ The `CONFIGFILE` and `INPUTFILE` are the same as the ones used by `ciderseq.py`.
 
 #### COMMAND
 
-`cstools.py` has two primary actions: `split` and `join` which split input files into several jobs and then join the split jobs once
+`cs-tools.py` has two primary actions: `split` and `join` which split input files into several jobs and then join the split jobs once
 processed. A third action called `plot` can be run after processing to produce DeConcat statistics. See `examples/plots` for examples of each chart.
 
 
@@ -186,7 +186,7 @@ processed. A third action called `plot` can be run after processing to produce D
 The typical run command is:
 
 ```
-python3 cstools.py split --format fastq --numjobs 8 --cluster "bsub -n 1" examples/ciderseq_config.json examples/example1.fastq
+python3 cs-tools.py split --format fastq --numjobs 8 --cluster "bsub -n 1" examples/ciderseq_config.json examples/example1.fastq
 ```
 
 >The `split` command outputs all necessary execution commands and ask confirmation before executing them.
@@ -194,14 +194,14 @@ python3 cstools.py split --format fastq --numjobs 8 --cluster "bsub -n 1" exampl
 
 followed by (for joining):
 ```
-python3 cstools.py join --clean examples/ciderseq_config.json examples/example1.fastq
+python3 cs-tools.py join --clean examples/ciderseq_config.json examples/example1.fastq
 ```
 
 >The `clean` option will remove the folder and files crated during **split**.
 
 And (for plotting):
 ```
-python3 cstools.py plot examples/ciderseq_config.json examples/example1.fastq
+python3 cs-tools.py plot examples/ciderseq_config.json examples/example1.fastq
 ```
 
 ## Input Files
