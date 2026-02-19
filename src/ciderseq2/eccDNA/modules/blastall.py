@@ -10,8 +10,7 @@ from Bio.Blast.Applications import NcbiblastnCommandline
 
 #launch makeblastdb on a fasta file
 def make_blastdb(subject_file, database):
-	subject_short = subject_file.replace(".fasta", "")
-	blastdb_cmd = 'makeblastdb -in {0}.fasta -dbtype nucl -out {1} -parse_seqids'.format(subject_short, database)
+	blastdb_cmd = 'makeblastdb -in {0} -dbtype nucl -out {1} -parse_seqids'.format(subject_file, database)
 
 	DB_process = subprocess.Popen(blastdb_cmd,
 	                              shell=True)
