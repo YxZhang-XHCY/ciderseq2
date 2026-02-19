@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ciderseq2"
+version = "3.0.0"
+description = "CIDER-Seq2: eccDNA detection from HiFi long reads"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.7"
+dependencies = [
+    "click",
+    "biopython<=1.77",
+]
+
+[project.scripts]
+ciderseq2 = "ciderseq2.cli:main"
+ciderseq2-deconcat = "ciderseq2.deconcat:main"
+ciderseq2-to-bed = "ciderseq2.to_bed:main"
